@@ -1,0 +1,303 @@
+[
+    {
+        "label": "pytest",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pytest",
+        "description": "pytest",
+        "detail": "pytest",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "TaskManager",
+        "importPath": "task_manager",
+        "description": "task_manager",
+        "isExtraImport": true,
+        "detail": "task_manager",
+        "documentation": {}
+    },
+    {
+        "label": "TaskManager",
+        "importPath": "task_manager",
+        "description": "task_manager",
+        "isExtraImport": true,
+        "detail": "task_manager",
+        "documentation": {}
+    },
+    {
+        "label": "Task",
+        "importPath": "task",
+        "description": "task",
+        "isExtraImport": true,
+        "detail": "task",
+        "documentation": {}
+    },
+    {
+        "label": "Task",
+        "importPath": "task",
+        "description": "task",
+        "isExtraImport": true,
+        "detail": "task",
+        "documentation": {}
+    },
+    {
+        "label": "Task",
+        "importPath": "task",
+        "description": "task",
+        "isExtraImport": true,
+        "detail": "task",
+        "documentation": {}
+    },
+    {
+        "label": "json",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "json",
+        "description": "json",
+        "detail": "json",
+        "documentation": {}
+    },
+    {
+        "label": "csv",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "csv",
+        "description": "csv",
+        "detail": "csv",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Dict",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "dataclass",
+        "importPath": "dataclasses",
+        "description": "dataclasses",
+        "isExtraImport": true,
+        "detail": "dataclasses",
+        "documentation": {}
+    },
+    {
+        "label": "field",
+        "importPath": "dataclasses",
+        "description": "dataclasses",
+        "isExtraImport": true,
+        "detail": "dataclasses",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "Storage",
+        "importPath": "storage",
+        "description": "storage",
+        "isExtraImport": true,
+        "detail": "storage",
+        "documentation": {}
+    },
+    {
+        "label": "json_task_manager",
+        "kind": 2,
+        "importPath": "tests.tests",
+        "description": "tests.tests",
+        "peekOfCode": "def json_task_manager(tmp_path):\n    file_path = tmp_path / \"tasks.json\"\n    return TaskManager(storage_path=str(file_path), storage_format=\"json\")\n# Путь до CSV файла\n@pytest.fixture\ndef csv_task_manager(tmp_path):\n    file_path = tmp_path / \"tasks.csv\"\n    return TaskManager(storage_path=str(file_path), storage_format=\"csv\")\n# Базовая модель для заполнения\n@pytest.fixture",
+        "detail": "tests.tests",
+        "documentation": {}
+    },
+    {
+        "label": "csv_task_manager",
+        "kind": 2,
+        "importPath": "tests.tests",
+        "description": "tests.tests",
+        "peekOfCode": "def csv_task_manager(tmp_path):\n    file_path = tmp_path / \"tasks.csv\"\n    return TaskManager(storage_path=str(file_path), storage_format=\"csv\")\n# Базовая модель для заполнения\n@pytest.fixture\ndef sample_task():\n    return Task(\n        id=1,\n        title=\"Задача\",\n        description=\"Описание\",",
+        "detail": "tests.tests",
+        "documentation": {}
+    },
+    {
+        "label": "sample_task",
+        "kind": 2,
+        "importPath": "tests.tests",
+        "description": "tests.tests",
+        "peekOfCode": "def sample_task():\n    return Task(\n        id=1,\n        title=\"Задача\",\n        description=\"Описание\",\n        category=\"Категория\",\n        due_date=\"2024-12-01\",\n        priority=\"Высокий\",\n        status=\"Не выполнена\",\n    )",
+        "detail": "tests.tests",
+        "documentation": {}
+    },
+    {
+        "label": "test_create_task",
+        "kind": 2,
+        "importPath": "tests.tests",
+        "description": "tests.tests",
+        "peekOfCode": "def test_create_task(json_task_manager):\n    manager = json_task_manager\n    task = manager.add_task(\n        title=\"Задача 1\",\n        description=\"Описание 1\",\n        category=\"Обучение\",\n        due_date=\"2024-12-01\",\n        priority=\"Средний\",\n    )\n    assert task.title == \"Задача 1\"",
+        "detail": "tests.tests",
+        "documentation": {}
+    },
+    {
+        "label": "test_task_list",
+        "kind": 2,
+        "importPath": "tests.tests",
+        "description": "tests.tests",
+        "peekOfCode": "def test_task_list(json_task_manager):\n    manager = json_task_manager\n    manager.add_task(\"Задача 1\", \"Описание 1\", \"Обучение\", \"2024-12-01\", \"Средний\")\n    manager.add_task(\"Задача 2\", \"Описание 2\", \"Работа\", \"2024-12-02\", \"Высокий\")\n    tasks = manager.show_tasks()\n    assert len(tasks) == 2\n    assert tasks[0].title == \"Задача 1\"\n    assert tasks[1].title == \"Задача 2\"\n# Изменение задач\ndef test_update_task(json_task_manager, sample_task):",
+        "detail": "tests.tests",
+        "documentation": {}
+    },
+    {
+        "label": "test_update_task",
+        "kind": 2,
+        "importPath": "tests.tests",
+        "description": "tests.tests",
+        "peekOfCode": "def test_update_task(json_task_manager, sample_task):\n    manager = json_task_manager\n    manager.tasks.append(sample_task)\n    updated_task = manager.edit_task(\n        task_id=1,\n        title=\"Измененная задача\",\n        description=\"Измененное описание\",\n        priority=\"Низкий\",\n    )\n    assert updated_task.title == \"Измененная задача\"",
+        "detail": "tests.tests",
+        "documentation": {}
+    },
+    {
+        "label": "test_mark_task",
+        "kind": 2,
+        "importPath": "tests.tests",
+        "description": "tests.tests",
+        "peekOfCode": "def test_mark_task(json_task_manager, sample_task):\n    manager = json_task_manager\n    manager.tasks.append(sample_task)\n    message = manager.mark_task(task_id=1)\n    assert message.status == \"Выполнена\"\n    assert manager.mark_task(1) == \"Задача 'Задача' уже выполнена.\"\n# Удалить задачу по ID\ndef test_delete_task_by_id(json_task_manager, sample_task):\n    manager = json_task_manager\n    manager.tasks.append(sample_task)",
+        "detail": "tests.tests",
+        "documentation": {}
+    },
+    {
+        "label": "test_delete_task_by_id",
+        "kind": 2,
+        "importPath": "tests.tests",
+        "description": "tests.tests",
+        "peekOfCode": "def test_delete_task_by_id(json_task_manager, sample_task):\n    manager = json_task_manager\n    manager.tasks.append(sample_task)\n    message = manager.delete_task_by_id(1)\n    assert message == \"Задача удалена!\"\n    assert len(manager.show_tasks()) == 0\n# Удалить задачи в категории\ndef test_delete_tasks_by_category(json_task_manager):\n    manager = json_task_manager\n    manager.add_task(\"Задача 1\", \"Описание 1\", \"Работа\", \"2024-12-01\", \"Средний\")",
+        "detail": "tests.tests",
+        "documentation": {}
+    },
+    {
+        "label": "test_delete_tasks_by_category",
+        "kind": 2,
+        "importPath": "tests.tests",
+        "description": "tests.tests",
+        "peekOfCode": "def test_delete_tasks_by_category(json_task_manager):\n    manager = json_task_manager\n    manager.add_task(\"Задача 1\", \"Описание 1\", \"Работа\", \"2024-12-01\", \"Средний\")\n    manager.add_task(\"Задача 2\", \"Описание 2\", \"Работа\", \"2024-12-02\", \"Высокий\")\n    manager.add_task(\"Задача 3\", \"Описание 3\", \"Личное\", \"2024-12-03\", \"Низкий\")\n    message = manager.delete_tasks_by_category(\"Работа\")\n    assert message == \"Все задачи из категории 'работа' успешно удалены!\"\n    assert len(manager.show_tasks()) == 1\n# Поиск задач по ID\ndef test_search_task_by_id(json_task_manager, sample_task):",
+        "detail": "tests.tests",
+        "documentation": {}
+    },
+    {
+        "label": "test_search_task_by_id",
+        "kind": 2,
+        "importPath": "tests.tests",
+        "description": "tests.tests",
+        "peekOfCode": "def test_search_task_by_id(json_task_manager, sample_task):\n    manager = json_task_manager\n    manager.tasks.append(sample_task)\n    task = manager.search_task_by_id(1)\n    assert task.title == \"Задача\"\n    assert manager.search_task_by_id(99) is None\n# Поиск задач по категории\ndef test_search_tasks_by_category(json_task_manager):\n    manager = json_task_manager\n    manager.add_task(\"Задача 1\", \"Описание 1\", \"Работа\", \"2024-12-01\", \"Средний\")",
+        "detail": "tests.tests",
+        "documentation": {}
+    },
+    {
+        "label": "test_search_tasks_by_category",
+        "kind": 2,
+        "importPath": "tests.tests",
+        "description": "tests.tests",
+        "peekOfCode": "def test_search_tasks_by_category(json_task_manager):\n    manager = json_task_manager\n    manager.add_task(\"Задача 1\", \"Описание 1\", \"Работа\", \"2024-12-01\", \"Средний\")\n    manager.add_task(\"Задача 2\", \"Описание 2\", \"Работа\", \"2024-12-02\", \"Высокий\")\n    tasks = manager.search_tasks_by_category(\"Работа\")\n    assert len(tasks) == 2\n    assert tasks[0].title == \"Задача 1\"\n    assert tasks[1].title == \"Задача 2\"\n# Поиск задач по ключевому слову\ndef test_search_tasks_by_keyword(json_task_manager):",
+        "detail": "tests.tests",
+        "documentation": {}
+    },
+    {
+        "label": "test_search_tasks_by_keyword",
+        "kind": 2,
+        "importPath": "tests.tests",
+        "description": "tests.tests",
+        "peekOfCode": "def test_search_tasks_by_keyword(json_task_manager):\n    manager = json_task_manager\n    manager.add_task(\"Задача 1\", \"Описание 1\", \"Работа\", \"2024-12-01\", \"Средний\")\n    manager.add_task(\"Задача 2\", \"Описание 2\", \"Работа\", \"2024-12-02\", \"Высокий\")\n    tasks = manager.search_tasks_by_keyword(\"Задача\")\n    assert len(tasks) == 2\n    assert tasks[0].title == \"Задача 1\"\n    assert tasks[1].title == \"Задача 2\"\n# Работоспособность сохранения/заугрузки задач в формате csv\ndef test_csv_storage(csv_task_manager):",
+        "detail": "tests.tests",
+        "documentation": {}
+    },
+    {
+        "label": "test_csv_storage",
+        "kind": 2,
+        "importPath": "tests.tests",
+        "description": "tests.tests",
+        "peekOfCode": "def test_csv_storage(csv_task_manager):\n    manager = csv_task_manager\n    manager.add_task(\"Задача CSV 1\", \"Описание 1\", \"Работа\", \"2024-12-01\", \"Средний\")\n    manager.add_task(\"Задача CSV 2\", \"Описание 2\", \"Обучение\", \"2024-12-02\", \"Высокий\")\n    manager.storage.save_tasks(manager.tasks)\n    loaded_manager = TaskManager(manager.storage.file_path, \"csv\")\n    tasks = loaded_manager.show_tasks()\n    assert len(tasks) == 2\n    assert tasks[0].title == \"Задача CSV 1\"",
+        "detail": "tests.tests",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def main():\n    print(\"Выберите формат хранения данных:\")\n    print(\"J. JSON\")\n    print(\"C. CSV\")\n    format_choice = input(\"Введите номер формата: \")\n    storage_format = \"json\" if format_choice == \"J\" else \"csv\"\n    manager = TaskManager(\"tasks.\" + storage_format, storage_format)\n    while True:\n        print(\"\\nМеню:\")\n        print(\"1. Просмотр задач\")",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "Storage",
+        "kind": 6,
+        "importPath": "storage",
+        "description": "storage",
+        "peekOfCode": "class Storage:\n    def __init__(self, file_path: str, format: str):\n        \"\"\"\n        Определяют формат хранения\n        \"\"\"\n        self.file_path = file_path\n        self.format = format.lower()\n        if self.format not in [\"json\", \"csv\"]:\n            raise ValueError(\"Доступны только JSON и CSV.\")\n    def load_tasks(self) -> List[Task]:",
+        "detail": "storage",
+        "documentation": {}
+    },
+    {
+        "label": "Task",
+        "kind": 6,
+        "importPath": "task",
+        "description": "task",
+        "peekOfCode": "class Task:\n    id: int  # Идентификационный номер\n    title: str  # Название\n    description: str  # Описание\n    category: str  # Категория\n    due_date: str  # Время дедлайна\n    priority: str  # Приоритет выполнения\n    status: str = \"Не выполнена\"  # Статус выполнения при создании статус \"Не выполнена\"\n    def to_dict(self) -> Dict:\n        \"\"\"",
+        "detail": "task",
+        "documentation": {}
+    },
+    {
+        "label": "TaskManager",
+        "kind": 6,
+        "importPath": "task_manager",
+        "description": "task_manager",
+        "peekOfCode": "class TaskManager:\n    def __init__(self, storage_path: str, storage_format: str = \"json\"):\n        self.storage = Storage(storage_path, storage_format)\n        self.tasks = self.storage.load_tasks()\n    def add_task(\n        self, title: str, description: str, category: str, due_date: str, priority: str\n    ) -> Task:\n        \"\"\"\n        Добавление новой задачи.\n        \"\"\"",
+        "detail": "task_manager",
+        "documentation": {}
+    }
+]
