@@ -269,7 +269,7 @@
         "kind": 2,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "def main():\n    print(\"Выберите формат хранения данных:\")\n    print(\"J. JSON\")\n    print(\"C. CSV\")\n    format_choice = input(\"Введите номер формата: \")\n    storage_format = \"json\" if format_choice == \"J\" else \"csv\"\n    manager = TaskManager(\"tasks.\" + storage_format, storage_format)\n    while True:\n        print(\"\\nМеню:\")\n        print(\"1. Просмотр задач\")",
+        "peekOfCode": "def main():\n    print(\"Выберите формат хранения данных:\")\n    print(\"J. JSON\")\n    print(\"C. CSV\")\n    format_choice = input(\"Введите номер формата: \")\n    storage_format = \"json\" if format_choice == \"J\" else \"csv\"\n    manager = TaskManager(\"tasks.\" + storage_format, storage_format)\n    def show_task():\n            tasks = manager.show_tasks()\n            if tasks:",
         "detail": "main",
         "documentation": {}
     },
