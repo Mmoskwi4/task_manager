@@ -58,6 +58,14 @@
         "documentation": {}
     },
     {
+        "label": "Interface",
+        "importPath": "cli",
+        "description": "cli",
+        "isExtraImport": true,
+        "detail": "cli",
+        "documentation": {}
+    },
+    {
         "label": "json",
         "kind": 6,
         "isExtraImport": true,
@@ -73,14 +81,6 @@
         "importPath": "csv",
         "description": "csv",
         "detail": "csv",
-        "documentation": {}
-    },
-    {
-        "label": "List",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
         "documentation": {}
     },
     {
@@ -121,22 +121,6 @@
         "description": "dataclasses",
         "isExtraImport": true,
         "detail": "dataclasses",
-        "documentation": {}
-    },
-    {
-        "label": "field",
-        "importPath": "dataclasses",
-        "description": "dataclasses",
-        "isExtraImport": true,
-        "detail": "dataclasses",
-        "documentation": {}
-    },
-    {
-        "label": "datetime",
-        "importPath": "datetime",
-        "description": "datetime",
-        "isExtraImport": true,
-        "detail": "datetime",
         "documentation": {}
     },
     {
@@ -265,11 +249,20 @@
         "documentation": {}
     },
     {
+        "label": "Interface",
+        "kind": 6,
+        "importPath": "cli",
+        "description": "cli",
+        "peekOfCode": "class Interface():\n    def __init__(self, format_choice: str):\n        storage_format = \"json\" if format_choice == \"J\" else \"csv\"\n        self.manager = TaskManager(\"tasks.\" + storage_format, storage_format)\n    def show_task(self):\n        tasks = self.manager.show_tasks()\n        if tasks:\n            for task in tasks:\n                print(task)\n        return print(\"Задач нет.\")",
+        "detail": "cli",
+        "documentation": {}
+    },
+    {
         "label": "main",
         "kind": 2,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "def main():\n    print(\"Выберите формат хранения данных:\")\n    print(\"J. JSON\")\n    print(\"C. CSV\")\n    format_choice = input(\"Введите номер формата: \")\n    storage_format = \"json\" if format_choice == \"J\" else \"csv\"\n    manager = TaskManager(\"tasks.\" + storage_format, storage_format)\n    def show_task():\n            tasks = manager.show_tasks()\n            if tasks:",
+        "peekOfCode": "def main():\n    print(\"Выберите формат хранения данных:\")\n    print(\"J. JSON\")\n    print(\"C. CSV\")\n    format_choice = input(\"Введите номер формата: \")\n    interface = Interface(format_choice)\n    while True:\n        print(\"\\nМеню:\")\n        print(\"1. Просмотр задач\")\n        print(\"2. Добавить задачу\")",
         "detail": "main",
         "documentation": {}
     },
